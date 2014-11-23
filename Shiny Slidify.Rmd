@@ -1,0 +1,92 @@
+---
+title       : Shiny App Deck
+subtitle    : Coursera Project
+author      : Dave
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Hello, Nice to Meet you
+
+1. Thank You For opening my presentaiton
+2. I realize my project is slightly lame
+3. I was having a lot fo trouble coming up with a good idea
+4. But hey maybe you really wanted to learn more about mtcars
+5. Since the specific models aren't on sale, why not look at makes?
+
+---  &twocol w1:40% w2:60%
+
+## So a sales pitch to use my application 
+    
+
+- You could us this to generate quick graphs.
+- It does do a math process to get the averages for makes.
+- Quick outdated Graphs of Major Name Brands is a key part of lazy clickbait blogging.
+- As long as I expect no payment or authors credit whatsoever, which I don't.
+
+### So the lazy click bait half of the internet, which seems to be most of the content, is totally my customer base
+### Which to be honest, I don't mind, I just want credit for my project
+
+
+--- 
+
+## Sample Graph
+```{r, echo=F}
+  library(datasets)
+  library(knitr)
+    mat <- do.call("rbind", strsplit(sub(" ", ";", row.names(mtcars)), ";"))
+    colnames(mat) <- c("MAKE", "MODEL")
+    mtcarsu<-cbind(mtcars,mat)
+    mtcarsu1<-mtcarsu[mtcarsu$MAKE=="Ford",]
+    mtcarsu2<-mtcarsu[mtcarsu$MAKE=="Mazda",]
+
+    su11<-colMeans(mtcarsu1[,c(3,4)])
+    su12<-colMeans(mtcarsu1[,c(5:11)])
+    su21<-colMeans(mtcarsu2[,c(3,4)])
+    su22<-colMeans(mtcarsu2[,c(5:11)])
+    
+    par(mfrow=c(2,2))
+    barplot(su11,main="Ford")
+    barplot(su12,main="Ford")
+    barplot(su21,main="Mazda")
+    barplot(su22,main="Mazda")
+```
+
+### Note I hardcoded the values for you. 
+
+--- .class #id 
+
+## The Code from that Graph
+### In the real application it has input to select makes.
+
+  output$distPlot <- renderPlot({
+    mtcarsu1<-mtcarsu[mtcarsu$MAKE==datasetInput1(),]
+    mtcarsu2<-mtcarsu[mtcarsu$MAKE==datasetInput2(),]
+    su11<-colMeans(mtcarsu1[,c(3,4)])
+    su12<-colMeans(mtcarsu1[,c(5:11)])
+    su21<-colMeans(mtcarsu2[,c(3,4)])
+    su22<-colMeans(mtcarsu2[,c(5:11)])
+    
+    par(mfrow=c(2,2))
+    barplot(su11,main=datasetInput1())
+    barplot(su12,main=datasetInput1())
+    barplot(su21,main=datasetInput2())
+    barplot(su22,main=datasetInput2())
+  })
+})
+
+--- .class #id 
+
+## Thank you for Reading   
+
+### I'm really not sure what more to say
+
+1. I did check the boxes
+2. It is my first effort
+3. You could assume that now that I know how it works I will create a project of world changing importance
+4. As soon as I have a good idea for what that will be

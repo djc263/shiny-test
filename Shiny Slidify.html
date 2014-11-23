@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shiny App Deck</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Shiny App Deck">
+  <meta name="author" content="Dave">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Shiny App Deck</h1>
+    <h2>Coursera Project</h2>
+    <p>Dave<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Hello, Nice to Meet you</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Thank You For opening my presentaiton</li>
+<li>I realize my project is slightly lame</li>
+<li>I was having a lot fo trouble coming up with a good idea</li>
+<li>But hey maybe you really wanted to learn more about mtcars</li>
+<li>Since the specific models aren&#39;t on sale, why not look at makes?</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>So a sales pitch to use my application</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>You could us this to generate quick graphs.</li>
+<li>It does do a math process to get the averages for makes.</li>
+<li>Quick outdated Graphs of Major Name Brands is a key part of lazy clickbait blogging.</li>
+<li>As long as I expect no payment or authors credit whatsoever, which I don&#39;t.</li>
+</ul>
+
+<h3>So the lazy click bait half of the internet, which seems to be most of the content, is totally my customer base</h3>
+
+<h3>Which to be honest, I don&#39;t mind, I just want credit for my project</h3>
+
+<div style='float:left;width:48%;' class='centered'>
+  
+</div>
+<div style='float:right;width:48%;'>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Sample Graph</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+<h3>Note I hardcoded the values for you.</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The Code from that Graph</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>In the real application it has input to select makes.</h3>
+
+<p>output$distPlot &lt;- renderPlot({
+    mtcarsu1&lt;-mtcarsu[mtcarsu$MAKE==datasetInput1(),]
+    mtcarsu2&lt;-mtcarsu[mtcarsu$MAKE==datasetInput2(),]
+    su11&lt;-colMeans(mtcarsu1[,c(3,4)])
+    su12&lt;-colMeans(mtcarsu1[,c(5:11)])
+    su21&lt;-colMeans(mtcarsu2[,c(3,4)])
+    su22&lt;-colMeans(mtcarsu2[,c(5:11)])</p>
+
+<pre><code>par(mfrow=c(2,2))
+barplot(su11,main=datasetInput1())
+barplot(su12,main=datasetInput1())
+barplot(su21,main=datasetInput2())
+barplot(su22,main=datasetInput2())
+</code></pre>
+
+<p>})
+})</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Thank you for Reading</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>I&#39;m really not sure what more to say</h3>
+
+<ol>
+<li>I did check the boxes</li>
+<li>It is my first effort</li>
+<li>You could assume that now that I know how it works I will create a project of world changing importance</li>
+<li>As soon as I have a good idea for what that will be</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Hello, Nice to Meet you'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='So a sales pitch to use my application'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Sample Graph'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='The Code from that Graph'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Thank you for Reading'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
